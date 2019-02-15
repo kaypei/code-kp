@@ -1,0 +1,251 @@
+{
+  "Nightly_DPM_Deployment_package": {
+    "Trigger": "Daily 6PM PST",
+    "Slave": "vncsite",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Neelamegam, Renugadevi <renugadevi.neelamegam@us.fujitsu.com>",
+      "Vijayaraghavan, Suganya <Suganya.Vijayaraghavan@us.fujitsu.com>",
+      "Janjanam, Padma <Padma.Janjanam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "None",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "Nightly_FPM_Deployment_package_new": {
+    "Trigger": "Nightly_DPM_Deployment_package",
+    "Slave": "vncsite",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Neelamegam, Renugadevi <renugadevi.neelamegam@us.fujitsu.com>",
+      "Vijayaraghavan, Suganya <Suganya.Vijayaraghavan@us.fujitsu.com>",
+      "Janjanam, Padma <Padma.Janjanam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "None",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "Nightly_VNC_Deployment_package": {
+    "Trigger": "Nightly_FPM_Deployment_package_new",
+    "Slave": "vncsite",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Neelamegam, Renugadevi <renugadevi.neelamegam@us.fujitsu.com>",
+      "Vijayaraghavan, Suganya <Suganya.Vijayaraghavan@us.fujitsu.com>",
+      "Janjanam, Padma <Padma.Janjanam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "None",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "NGEMF_Installation_Start_Suite": {
+    "Trigger": "Nightly_VNC_Deployment_package",
+    "Slave": "NGEMF-slave-u084",
+    "Git credentials": "sdnauto",
+    "Responsibility": [
+      "Sugumar, Logaraj <logaraj.sugumar@us.fujitsu.com>",
+      "Muthuselvam, Sankaralingam <sankaralingam.muthuselvam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "NGEMF_Setup-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "NGEMF_AUTOMATION_NE_DISCOVERY": {
+    "Trigger": " NGEMF_Installation_Start_Suite",
+    "Slave": "NGEMF-slave-u084",
+    "Git credentials": "sdnauto",
+    "Responsibility": [
+      "Sugumar, Logaraj <logaraj.sugumar@us.fujitsu.com>",
+      "Muthuselvam, Sankaralingam <sankaralingam.muthuselvam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "NGEMF_Setup-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "NGEMF_Automation_Sanity_Regression_Test_Suite": {
+    "Trigger": " NGEMF_AUTOMATION_NE_DISCOVERY",
+    "Slave": "NGEMF-slave-u084",
+    "Git credentials": "sdnauto",
+    "Responsibility": [
+      "Sugumar, Logaraj <logaraj.sugumar@us.fujitsu.com>",
+      "Vakadi, Harika <harika.vakadi@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "NGEMF_Setup-1",
+    "Tests": 364,
+    "Server_ip": "167.254.172.165"
+  },
+  "NGEMF_UI_Development_Auto_installer_u126": {
+    "Trigger": " Nightly_VNC_Deployment_package",
+    "Slave": "NGEMF-slave-u341",
+    "Git credentials": "sdnauto",
+    "Responsibility": [
+      "Sugumar, Logaraj <logaraj.sugumar@us.fujitsu.com>",
+      "Vakadi, Harika <harika.vakadi@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "NGEMF_Setup-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "Nightly_Openroadm_Cluster_Setup": {
+    "Trigger": " Nightly_VNC_Deployment_package",
+    "Slave": "sdnautomation",
+    "Git credentials": "None",
+    "Responsibility": [
+      "Chalasani, Srujan <srujan.chalasani@us.fujitsu.com>",
+      "Janjanam, Padma <Padma.Janjanam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "Openroadm_Setup-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "Nightly_Sanity_Openroadm": {
+    "Trigger": " Nightly_Openroadm_Cluster_Setup",
+    "Slave": "sdnautomation",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Chalasani, Srujan <srujan.chalasani@us.fujitsu.com>",
+      "Janjanam, Padma <Padma.Janjanam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "Openroadm_Setup-1",
+    "Tests": 375,
+    "Server_ip": "emf172136.nms.fnc.fujitsu.com"
+  },
+  "Nightly_Shaw_Cluster_Setup": {
+    "Trigger": " Nightly_VNC_Deployment_package",
+    "Slave": "sdnautomation",
+    "Git credentials": "None",
+    "Responsibility": [
+      "Chalasani, Srujan <srujan.chalasani@us.fujitsu.com>",
+      "Janjanam, Padma <Padma.Janjanam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "Shaw_Setup-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "Nightly_Sanity_Shaw": {
+    "Trigger": " Nightly_Shaw_Cluster_Setup",
+    "Slave": "sdnautomation",
+    "Git_credentials": "jenkins",
+    "Responsibility": [
+      "Chalasani, Srujan <srujan.chalasani@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "Shaw_Setup-1",
+    "Tests": 163,
+    "Server_ip": "emf57221.nms.fnc.fujitsu.com"
+  },
+  "RST_OFFSHORE_NIGHTLY_CLUSTER_INSTALLATION": {
+    "Trigger": " Nightly_VNC_Deployment_package",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Sugumar, Logaraj <logaraj.sugumar@us.fujitsu.com>",
+      "Muthuselvam, Sankaralingam <sankaralingam.muthuselvam@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "RST_SETUP-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "RST_SET_UP_DISCOVERY_NIGHTLY": {
+    "Trigger": " RST_OFFSHORE_NIGHTLY_CLUSTER_INSTALLATION",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Singh, Rahul <rahul.singh@us.fujitsu.com>",
+      "Sudharshan, Hariprasad <hariprasad.sudharshan@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "RST_SETUP-1",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "RST_SNMP": {
+    "Trigger": " RST_SET_UP_DISCOVERY_NIGHTLY",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Srinivasan, Rohit <rohit.srinivasan@us.fujitsu.com>",
+      "Sudharshan, Hariprasad <hariprasad.sudharshan@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "RST_SETUP-1",
+    "Tests": 111,
+    "Server_ip": "167.254.172.165"
+  },
+  "RST_CM_Regression_Suite": {
+    "Trigger": " RST_SNMP",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Sudharshan, Hariprasad <hariprasad.sudharshan@us.fujitsu.com>",
+      "Singh, Rahul <rahul.singh@us.fujitsu.com>",
+      "Rangasamy, Kiruthiga <kiruthiga.rangasamy@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "RST_SETUP-1",
+    "Tests": 562,
+    "Server_ip": "167.254.172.165"
+  },
+  "RST_PM_REST_Tests": {
+    "Trigger": "RST_CM_Regression_Suite",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Sudharshan, Hariprasad <hariprasad.sudharshan@us.fujitsu.com>",
+      "Singh, Rahul <rahul.singh@us.fujitsu.com>",
+      "Rangasamy, Kiruthiga <kiruthiga.rangasamy@us.fujitsu.com>"
+    ],
+    "Issues": "",
+    "Setup": "RST_SETUP-1",
+    "Tests": 111,
+    "Server_ip": "167.254.172.165"
+  },
+  "Topology_Nightly_VNC_Installation": {
+    "Trigger": "Nightly_VNC_Deployment_package",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Sugumar, Logaraj <logaraj.sugumar@us.fujitsu.com>",
+      "Muthuselvam,Sankaralingam <sankaralingam.muthuselvam@us.fujitsu.com>"
+    ],
+    "Setup": "Topology_Setup",
+    "Tests": 0,
+    "Server_ip": ""
+  },
+  "TOPOLOGY_Sanity": {
+    "Trigger": "Topology_Nightly_VNC_Installation",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Arumugam, Ramesh <ramesh.arumugam@us.fujitsu.com>",
+      "Parvin, Faridha <Faridha.Parvin@us.fujitsu.com>"
+    ],
+    "Setup": "Topology_Setup",
+    "Tests": 40,
+    "Server_ip": "10.249.57.57"
+  },
+  "VPD_Nightly_job": {
+    "Trigger": "Topology_Nightly_VNC_Installation",
+    "Slave": "sdnautomation1",
+    "Git credentials": "jenkins",
+    "Responsibility": [
+      "Alagappan, Nagammai <nagammai.alagappan@us.fujitsu.com>",
+      "Ashik, Mohammed <Mohammed.Ashik@us.fujitsu.com>",
+      "Rajavel, Jayaprakash <jayaprakash.rajavel@us.fujitsu.com>"
+    ],
+    "Setup": "VPD_Setup",
+    "Tests": 6,
+    "Server_ip": "svdevvm1833.nms.fnc.fujitsu.com"
+  }
+}
